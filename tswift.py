@@ -67,9 +67,6 @@ class Song(object):
         """Load the lyrics from MetroLyrics."""
         page = requests.get(self._url)
 
-        if page.status_code > 200:
-            raise TswiftError("No lyrics available for requested song")
-
         # Forces utf-8 to prevent character mangling
         page.encoding = 'utf-8'
 
